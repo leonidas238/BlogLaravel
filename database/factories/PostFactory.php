@@ -4,20 +4,21 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class VideojuegoFactory extends Factory
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
+ */
+class PostFactory extends Factory
 {
     /**
      * Define the model's default state.
      *
-     * @return array
+     * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-            'titulo' => $this-> faker -> word(),
-            'autor' => $this-> faker -> word(),
-            'cuerpo' => $this-> faker -> ,
-
+            'titulo' =>  ;
+            'cuerpo' => ;
         ];
     }
 }
