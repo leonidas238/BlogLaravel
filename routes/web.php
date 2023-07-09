@@ -17,19 +17,13 @@ use App\Http\Middleware\PermisoDeEscritura;
 |
 */
 
-
-
-
 Route::get('/', function () {
     return view('index');
 });
 
-Route::get("/post",[AutenticacionController::class,"VerPosts"])->middleware(Autenticacion::class);
-
-Route::get("/privada2", function (){
-    return view("privada2");
+Route::get("/usuariologueado", function (){
+    return view("usuariologueado");
 })->middleware(Autenticacion::class);
-
 
 Route::get("/registrar", function (){
     return view("registrar");
@@ -39,9 +33,11 @@ Route::get("/login", function (){
     return view("login");
 });
 
-
-
+Route::get("/verposts", function (){
+    return view("post");
+})->middleware(Autenticacion::class);
 
 Route::post("/registrar",[AutenticacionController::class,"Registrar"]);
 Route::post("/login",[AutenticacionController::class,"Login"]);
-Route::get("/logout",[AutenticacionController::class,"Logout"])-> middleware(Autenticacion::class);
+Route::get("/logout",[AutenticacionController::class,"Logout"])
+-> middleware(Autenticacion::class);

@@ -25,7 +25,7 @@ class AutenticacionController extends Controller
         $credenciales = $request -> only(["email","password"]);
         if(!Auth::attempt($credenciales))
             return redirect("/login")->with("error",true);
-        return redirect("/");
+        return redirect("/usuariologueado");
  
 
     }

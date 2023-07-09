@@ -1,16 +1,17 @@
 
 @include('common/header')
 
-    <h1>Login</h1>
-    <form action="/login" method="post">
-        @csrf
-        Email: <input type="text" name="email" id=""> <br>
-        Password: <input type="password" name="password" id=""> <br>
+    <center>
+        <h2>Login</h2>
+        <form action="/login" method="post">
+            @csrf
+            Email: <input type="text" name="email" id=""> <br>
+            Password: <input type="password" name="password" id=""> <br>
 
-        <input type="submit" value="Iniciar Sesion">
+            <input type="submit" value="Iniciar Sesion">
 
-    </form>
-
+        </form>
+    </center>
     @if(session('error'))
         <b>Credenciales invalidas</b>
     @endif

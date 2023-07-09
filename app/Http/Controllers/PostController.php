@@ -19,11 +19,9 @@ class PostController extends Controller
      * Show the form for creating a new resource.
      */
     public function Crear(Request $request){
-        $v = new Videojuego();
+        $v = new Post();
         $v -> nombre = $request -> post("titulo");
         $v -> genero = $request -> post("cuerpo");
-        $v -> anio = $request -> post("autor");
-
         $v -> save();
 
         return redirect("/post")->with("creado",true);
@@ -41,7 +39,7 @@ class PostController extends Controller
     public function Listar(Request $request){
 
         return view("listarPost",[ 
-            'posts' => Videojuego::all()
+            'posts' => Post::all()
         ]);
 
     }
