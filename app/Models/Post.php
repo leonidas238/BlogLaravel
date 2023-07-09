@@ -13,6 +13,6 @@ class Post extends Model
 
     public function User()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsTo(User::class);
     }
 }

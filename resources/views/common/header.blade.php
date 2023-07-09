@@ -8,8 +8,8 @@
 <body>
 
 @if(Auth::check())
-    <a href="/usuariologueado">Home</a>
-    <a href="/verposts">Ver Posts</a>
+    <a href="/">Home</a>
+    <a href="/logueado">Ver Posts</a>
     <a href="/logout">Cerrar sesión</a><br>
     Bienvenido {{ Auth::user() -> name }}.
 @else 

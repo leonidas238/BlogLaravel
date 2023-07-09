@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -37,9 +38,17 @@ class PostController extends Controller
     }
 
     public function Listar(Request $request){
+        $u=Post::simplePaginate(3);
+        return view("index",[ 
+            'posts' => $u
+        ]);
 
-        return view("listarPost",[ 
-            'posts' => Post::all()
+    }
+
+    public function ListarPorAutor(Request $request){
+        $u=Post::where('user_id',Auth::User()->id)->simplePaginate(3);
+        return view("user.logueado",[ 
+            'posts' => $u
         ]);
 
     }

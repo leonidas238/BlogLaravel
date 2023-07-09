@@ -1,7 +1,7 @@
 @include('common/header')
 <h1>La pagina principal</h1>
-
-
+<br>
+<br>
 <center>
   <div class="header">
     <h2>Blog Name</h2>

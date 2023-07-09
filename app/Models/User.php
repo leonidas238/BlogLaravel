@@ -43,6 +43,6 @@ class User extends Authenticatable
 
     public function Publica()
     {
-        return $this->belongsToMany(Post::class);
+        return $this->hasMany(Post::class);
     }
 }
