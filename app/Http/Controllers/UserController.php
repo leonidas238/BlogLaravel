@@ -17,9 +17,7 @@ class UserController extends Controller
         $u -> save();
 
         return redirect("/registrar")-> with("created",true);
-
     }
-
 
     public function Login(Request $request){
         $credentials = $request->only('email', 'password');
@@ -32,23 +30,4 @@ class UserController extends Controller
         Auth::logout();
         return redirect("/login")->with("logout",true);
     }
-
-   /*
-    public function Home(Request $request){
-        if(Auth::check()){
-            $posts = Auth::user() -> Publica() -> get();
-            return view("inicio",["posts" => $posts]);
-        }
-        return view("inicio");
-
-    }
-
-    public function VerPosts(Request $request){
-      $posts = Auth::user() -> posts() -> get();
-      return view("privada",["posts" => $posts]);
-  }
-  */
-
-
-
 }

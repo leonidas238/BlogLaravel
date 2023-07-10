@@ -24,22 +24,13 @@ Route::get("/login", function (){
 Route::get("/registrar", function (){
     return view("/user/registrar");
 });
-Route::get("/crearPost", function (){
-    return view("/post/crear");
-})->middleware(Autenticacion::class);
-Route::get("/editarPost", function (){
-    return view("/post/editar");
-})->middleware(Autenticacion::class);
-Route::get("/listarPost", function (){
-    return view("/post/listar");
-})->middleware(Autenticacion::class);
 
-
-Route::get("/logueado",[PostController::class,"ListarPorAutor"]);
 Route::get("/",[PostController::class,"Listar"]);
+Route::get("/logueado",[PostController::class,"ListarPorAutor"]);
+Route::get("/editar",[PostController::class,"update"])->name('post.editar');
+Route::patch("/{post}/editar",[PostController::class,"update"])->name('post.update');
 
 Route::post("/listar",[PostController::class,"Listar"]);
-Route::post("/editar",[PostController::class,"edit"]);
 Route::post("/registrar",[AutenticacionController::class,"Registrar"]);
 Route::post("/login",[AutenticacionController::class,"Login"]);
 

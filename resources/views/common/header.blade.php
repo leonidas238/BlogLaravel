@@ -6,16 +6,13 @@
     <title>Blog Laravel</title>
 </head>
 <body>
-
-@if(Auth::check())
-    <a href="/">Home</a>
-    <a href="/logueado">Ver Posts</a>
-    <a href="/logout">Cerrar sesión</a><br>
+    @if(Auth::check())
+      <a href="/">Home</a>
+      <a href="/logueado">Ver mis Posts</a>
+      <a href="/logout">Cerrar sesión</a><br>
     Bienvenido {{ Auth::user() -> name }}.
-@else 
-    <a href="/">Home</a>
-    <a href="/login">Iniciar sesion</a>
-    <a href="/registrar">Registrar</a> 
-
-
-@endif
+    @else 
+      <a href="/">Home</a>
+      <a href="/login">Iniciar sesion</a>
+      <a href="/registrar">Registrar</a> 
+    @endif

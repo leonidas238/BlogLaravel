@@ -35,10 +35,4 @@ class AutenticacionController extends Controller
         return redirect("/");
     }
 
-   /* 
-    public function VerPosts(Request $request){
-        $posts = Auth::user() -> posts() -> get();
-        return view("privada",["posts" => $posts]);
-    }
-    */
 }

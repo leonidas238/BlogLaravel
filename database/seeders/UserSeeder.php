@@ -10,9 +10,9 @@ class UserSeeder extends Seeder
    public function run ()
    {
       User::create([
-        'name' => 'Victor Heredia',
-        'email' => 'salamin@guasca.gl',
-        'password' => bcrypt('1234'),
+        'name' => 'Ozzy Osbourne',
+        'email' => 'ozzy@blackSabbath.hm',
+        'password' => bcrypt('666'),
       ]);
       User::factory(9)->create();
    }
