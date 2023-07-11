@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Termwind\Components\Hr;
 
 class PostController extends Controller
 {
@@ -15,11 +16,11 @@ class PostController extends Controller
 
     public function Crear(Request $request){
         $v = new Post();
-        $v -> nombre = $request -> post("titulo");
-        $v -> genero = $request -> post("cuerpo");
+        $v -> titulo = $request -> post("titulo");
+        $v -> cuerpo = $request -> post("cuerpo");
         $v -> save();
 
-        return redirect("/post")->with("creado",true);
+        return redirect("/post.crear")->with("creado",true);
     }
     
     public function Listar(Request $request){
@@ -43,11 +44,15 @@ class PostController extends Controller
     }
     
     public function update(Post $post){
-       return view('post.editar', ['post'=> $post]);
+       //return view('post.editar', ['post'=> $post]);
     }
 
     public function destroy(Post $post)
     {
+       
+    }
 
+    public function show(Post $post){
+        return $post;
     }
 }

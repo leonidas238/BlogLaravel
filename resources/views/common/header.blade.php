@@ -9,6 +9,7 @@
     @if(Auth::check())
       <a href="/">Home</a>
       <a href="/logueado">Ver mis Posts</a>
+      <a href="/post.crear">Crear Posts</a>
       <a href="/logout">Cerrar sesión</a><br>
     Bienvenido {{ Auth::user() -> name }}.
     @else 
