@@ -1,11 +1,9 @@
-<h1>Editar Post</h1>
-<form method="POST" action="{{ route('post.editar', $post) }}">
+<h3>Editar Post</h3>
+<form action="{{ route('post.update', $post) }}" method="POST" >
     @csrf
-      <div>
-          <label>Titulo <br>
-          <input type="text" value="{{ $post->nombre }}"><br></label>
-          <label>Cuerpo
-          <input type="longtext" value="{{ $post->cuerpo }}"><br></label>
-      </div>
-      <button type="submit">Actualizar</button>
+    <label>Titulo <br>
+    <input name="titulo" type="text" value="{{ old('titulo',$post->titulo)}}"><br></label>
+    <label>Cuerpo<br>
+    <textarea name="cuerpo" value="{{ old('cuerpo',$post->cuerpo)}}"></textarea><br><label>
+    <button type="submit">Enviar</button>
 </form>

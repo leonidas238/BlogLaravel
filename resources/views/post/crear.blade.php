@@ -1,9 +1,9 @@
-<h1>Crear Post</h1>
+<h3>Crear Post</h3>
 <form action="{{ route('post.store') }}" method="POST" >
     @csrf
     <label>Titulo <br>
-    <input type="text"><br></label>
-    <label>Cuerpo
-    <input type="longtext"><br><label>
+    <input name="titulo" type="text"><br></label>
+    <label>Cuerpo<br>
+    <textarea name="cuerpo"></textarea><br><label>
     <button type="submit">Enviar</button>
-</form
+</form>

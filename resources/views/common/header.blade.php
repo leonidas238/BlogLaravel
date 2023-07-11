@@ -17,3 +17,7 @@
       <a href="/login">Iniciar sesion</a>
       <a href="/registrar">Registrar</a> 
     @endif
+
+    @if(session('status'))
+        <div>{{ session('status') }}</div>
+    @endif

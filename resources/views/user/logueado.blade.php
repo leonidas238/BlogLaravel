@@ -11,7 +11,7 @@
           <p>{{$post->cuerpo}}</p>
           Autor: <p>{{$post->User->name}}</p><br>
           Publicado: <p>{{$post->created_at}}</p><br>
-          <a href="/post.editar/{{ $post->id }}">Editar</a>
+          <a href="/post/{{ $post->id }}/editar">Editar</a>
       </div>
     @endforeach
     {{$posts->links()}}
