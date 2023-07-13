@@ -1,7 +1,7 @@
 @include('common/header')
   <center>
     <h2>Login</h2>
-    <form action="/login" method="post">
+    <form action="/login" method="POST">
       @csrf
       Email: <input type="text" name="email" id=""> <br>
       Password: <input type="password" name="password" id=""> <br>

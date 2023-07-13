@@ -22,7 +22,7 @@ class PostController extends Controller
     
     public function ListarPorAutor(Request $request){
         $u=Post::where('user_id',Auth::User()->id)->simplePaginate(3);
-        return view("user.logueado",[ 
+        return view("logueado",[ 
             'posts' => $u
         ]);
     }

@@ -1,11 +1,11 @@
 @include('common/header')
   <br><br>
   <center>
-      <form action="/registrar" method="post">
+      <form action="{{ route('registrar') }}" method="POST" autofocus='autofocus'>
         @csrf
-        Nombre: <input type="text" name="name" id=""> <br>
-        Correo: <input type="text" name="email" id=""> <br>
-        Password: <input type="password" name="password" id=""> <br>
+        Nombre: <input type="text" name="name"><br>
+        Correo: <input type="email" name="email"><br>
+        Password: <input type="password" name="password"><br>
         <input type="submit" value="Registrar">
       </form><br>
       @if(session('registrado'))

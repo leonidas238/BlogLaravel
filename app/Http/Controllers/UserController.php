@@ -11,9 +11,9 @@ class UserController extends Controller
 {
     public function Register(Request $request){
         $u = new User();
-        $u -> name = $request -> post('name');
-        $u -> email = $request -> post('email');
-        $u -> password = Hash::make($request -> post('password'));
+        $u -> name = $request -> request('name');
+        $u -> email = $request -> request('email');
+        $u -> password = Hash::make($request -> request('password'));
         $u -> save();
 
         return redirect("/registrar")-> with("created",true);
